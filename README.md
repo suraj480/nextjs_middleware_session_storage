@@ -66,5 +66,18 @@ Reusable component for rendering labeled input fields.
   type="text" 
   value={username}
   onChange={(e) => setUsername(e.target.value)} 
-  placeholder="Enter Username" 
-/>
+  placeholder="Enter Username" />
+
+
+
+## Environment Variables:
+
+Environment Variables are key-value pairs used to store:
+- Secrets (Like API keys, tokens)
+-Environment Based Configurations (Dev vs Prod URLs)
+-Application Configuration Setting.
+
+Different File Types/Conventions:
+.env.local - For secrets or machine specific settings
+.env.development - Only used in Development Mode
+.env.production -  Only used in Production Mode

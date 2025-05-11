@@ -2,7 +2,7 @@
 "use client";
 
 import ErrorAlert from "@/components/ErrorAlert";
-import InputField from "@/components/InputField";   
+import InputField from "@/components/InputField";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -12,9 +12,10 @@ export default function LoginPage() {
     const [error, setError] = useState('');
 
     const handleLogin = () => {
-
-        const validUsername = 'admin';
-        const validPassword = '123456';
+        const validUsername = process.env.NEXT_PUBLIC_USERNAME;
+        const validPassword = process.env.NEXT_PUBLIC_PASSWORD;
+        // const validUsername = 'admin';
+        // const validPassword = '123456';
 
         if (username === validUsername && password === validPassword) {
             // Set LocalStorage
