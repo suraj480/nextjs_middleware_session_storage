@@ -16,21 +16,55 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Next.js Middleware Guide
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project demonstrates the use of **Middleware in Next.js** to intercept and manipulate requests before they reach your application routes. Middleware in Next.js runs on the **Edge Runtime**, providing high performance and global availability.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 What is Middleware?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Middleware in Next.js allows you to run code **before a request is completed**. You can use it to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Authenticate users
+- Redirect or rewrite requests
+- Apply feature flags or A/B testing
+- Log or monitor requests
+- Localize based on geolocation or headers
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 File Location
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Middleware is defined in a file named:
+# 🔐 Next.js Login Page with Middleware Authentication
+
+This project demonstrates a simple login system using **React state**, **localStorage**, and **cookies**, with Next.js **middleware** to protect routes like `/about`.
+
+---
+
+## 🚀 Features
+
+- React-based login form using functional components
+- Auth check using hardcoded credentials (`admin` / `123456`)
+- Stores login status in both `localStorage` and a `cookie`
+- Redirects to `/about` on successful login
+- Displays error messages on invalid credentials
+- Can be used with Next.js Middleware to restrict access to protected routes
+
+---
+
+## 🧱 Components Used
+
+### ✅ `InputField`
+
+Reusable component for rendering labeled input fields.
+
+```tsx
+<InputField 
+  label="Username" 
+  type="text" 
+  value={username}
+  onChange={(e) => setUsername(e.target.value)} 
+  placeholder="Enter Username" 
+/>
